@@ -25,13 +25,13 @@ const Header = () => {
           </div>
         </div>
         <div className="social-links">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://www.linkedin.com/in/ashut0shrai/" target="_blank" rel="noopener noreferrer" className="social-link">
             LinkedIn
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://github.com/Ashut0shRai12002" target="_blank" rel="noopener noreferrer" className="social-link">
             Github
           </a>
-          <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://leetcode.com/u/ashutoshrai126/" target="_blank" rel="noopener noreferrer" className="social-link">
             Leetcode
           </a>
         </div>
