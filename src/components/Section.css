@@ -1,0 +1,400 @@
+.section {
+  padding: 40px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #34a853;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #34a853;
+  display: inline-block;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Education Styles */
+.education-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #34a853;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.education-institution {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.education-date {
+  color: #34a853;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.education-degree {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Experience Styles */
+.experience-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #34a853;
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.experience-role {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  color: #34a853;
+  font-weight: 500;
+}
+
+.experience-date {
+  color: #0f9d58;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.experience-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-list li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.experience-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #34a853;
+  font-weight: bold;
+}
+
+/* Project Styles */
+.project-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #3ddc84;
+}
+
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.project-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.project-client {
+  color: #3ddc84;
+  font-weight: 500;
+}
+
+.project-tech {
+  color: #34a853;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.project-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.project-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #3ddc84;
+  font-weight: bold;
+}
+
+/* About Section Styles */
+.about-section {
+  background: linear-gradient(to bottom, #f0fdf4 0%, #ffffff 100%);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.android-focus {
+  background: linear-gradient(135deg, #34a853 0%, #0f9d58 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(52, 168, 83, 0.3);
+}
+
+.focus-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.focus-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.focus-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.passion-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.passion-item {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #e8f5e9;
+  display: flex;
+  gap: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.passion-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(52, 168, 83, 0.2);
+  border-color: #34a853;
+}
+
+.passion-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.passion-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34a853;
+  margin-bottom: 8px;
+}
+
+.passion-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Technology Styles */
+.tech-category {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #34a853;
+  transition: all 0.3s;
+}
+
+.tech-category:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(52, 168, 83, 0.15);
+}
+
+.android-tech {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-left: 4px solid #34a853;
+  border-width: 6px;
+  box-shadow: 0 4px 15px rgba(52, 168, 83, 0.2);
+}
+
+.android-badge-small {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.tech-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.android-tech .tech-title {
+  color: #0f9d58;
+  font-weight: 700;
+}
+
+.tech-items {
+  color: #555;
+  line-height: 1.8;
+}
+
+.android-tech .tech-items {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section {
+    padding: 25px 20px;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .android-focus {
+    padding: 30px 20px;
+  }
+  
+  .focus-title {
+    font-size: 1.4rem;
+  }
+  
+  .focus-description {
+    font-size: 1rem;
+  }
+  
+  .passion-points {
+    grid-template-columns: 1fr;
+  }
+  
+  .passion-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .education-header,
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .education-date,
+  .experience-date {
+    font-size: 0.9rem;
+  }
+  
+  .education-institution,
+  .experience-role,
+  .project-name {
+    font-size: 1.1rem;
+  }
+  
+  .experience-list li,
+  .project-list li {
+    font-size: 0.95rem;
+    padding-left: 20px;
+  }
+  
+  .tech-items {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 20px 15px;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .android-focus {
+    padding: 25px 15px;
+  }
+  
+  .focus-icon {
+    font-size: 2.5rem;
+  }
+  
+  .focus-title {
+    font-size: 1.2rem;
+  }
+  
+  .focus-description {
+    font-size: 0.95rem;
+  }
+  
+  .education-item,
+  .experience-item,
+  .project-item,
+  .tech-category {
+    padding: 20px;
+  }
+  
+  .passion-item {
+    padding: 20px;
+  }
+}
+
