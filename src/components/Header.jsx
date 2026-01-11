@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
 
 const Header = () => {
+  const [particles, setParticles] = useState([]);
+
+  useEffect(() => {
+    // Create animated particles
+    const particleArray = Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100 + '%',
+      delay: Math.random() * 15 + 's',
+      duration: Math.random() * 10 + 10 + 's',
+      size: Math.random() * 4 + 4 + 'px'
+    }));
+    setParticles(particleArray);
+  }, []);
+
   return (
     <header className="header">
+      {particles.map(particle => (
+        <div
+          key={particle.id}
+          className="particle"
+          style={{
+            left: particle.left,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
+            width: particle.size,
+            height: particle.size
+          }}
+        />
+      ))}
+      {/* Animated floating shapes */}
+      <div className="floating-shape shape-1"></div>
+      <div className="floating-shape shape-2"></div>
+      <div className="floating-shape shape-3"></div>
       <div className="android-badge">🤖 Android Developer</div>
       <div className="header-content">
         <div className="android-icon">📱</div>
@@ -26,13 +57,16 @@ const Header = () => {
         </div>
         <div className="social-links">
           <a href="https://www.linkedin.com/in/ashut0shrai/" target="_blank" rel="noopener noreferrer" className="social-link">
-            LinkedIn
+            💼 LinkedIn
           </a>
           <a href="https://github.com/Ashut0shRai12002" target="_blank" rel="noopener noreferrer" className="social-link">
-            Github
+            💻 Github
           </a>
           <a href="https://leetcode.com/u/ashutoshrai126/" target="_blank" rel="noopener noreferrer" className="social-link">
-            Leetcode
+            🧩 Leetcode
+          </a>
+          <a href="/resume_enhanced.tex" download="Ashutosh_Rai_Resume.pdf" className="social-link resume-link">
+            📄 Download Resume
           </a>
         </div>
       </div>
