@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7d814a9e.css",
-    "main.js": "/portfolio/static/js/main.7709cca3.js",
-    "index.html": "/portfolio/index.html",
-    "main.7d814a9e.css.map": "/portfolio/static/css/main.7d814a9e.css.map",
-    "main.7709cca3.js.map": "/portfolio/static/js/main.7709cca3.js.map"
+    "main.css": "/Ashutosh-Android-Developer-portfolio/static/css/main.7d814a9e.css",
+    "main.js": "/Ashutosh-Android-Developer-portfolio/static/js/main.7709cca3.js",
+    "index.html": "/Ashutosh-Android-Developer-portfolio/index.html",
+    "main.7d814a9e.css.map": "/Ashutosh-Android-Developer-portfolio/static/css/main.7d814a9e.css.map",
+    "main.7709cca3.js.map": "/Ashutosh-Android-Developer-portfolio/static/js/main.7709cca3.js.map"
   },
   "entrypoints": [
     "static/css/main.7d814a9e.css",
