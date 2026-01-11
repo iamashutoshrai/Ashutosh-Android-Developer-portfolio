@@ -2,7 +2,7 @@
   "name": "ashutosh-rai-portfolio",
   "version": "1.0.0",
   "description": "Portfolio website for Ashutosh Rai - Android Developer",
-  "homepage": "https://iamashutoshrai.github.io/portfolio",
+  "homepage": "https://iamashutoshrai.github.io/Ashutosh-Android-Developer-portfolio",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
