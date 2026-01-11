@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ashutosh-Android-Developer-portfolio/static/css/main.6c9fd05b.css",
+    "main.js": "/Ashutosh-Android-Developer-portfolio/static/js/main.a924b1c1.js",
+    "index.html": "/Ashutosh-Android-Developer-portfolio/index.html",
+    "main.6c9fd05b.css.map": "/Ashutosh-Android-Developer-portfolio/static/css/main.6c9fd05b.css.map",
+    "main.a924b1c1.js.map": "/Ashutosh-Android-Developer-portfolio/static/js/main.a924b1c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c9fd05b.css",
+    "static/js/main.a924b1c1.js"
+  ]
+}
