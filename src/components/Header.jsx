@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import './Header.css';
 
 const Header = () => {
-  const [particles, setParticles] = useState([]);
-
-  useEffect(() => {
-    // Create animated particles
-    const particleArray = Array.from({ length: 30 }, (_, i) => ({
+  // Memoize particles to avoid recalculation on re-renders
+  const particles = useMemo(() => {
+    // Reduced from 30 to 15 particles for better performance
+    return Array.from({ length: 15 }, (_, i) => ({
       id: i,
       left: Math.random() * 100 + '%',
       delay: Math.random() * 15 + 's',
       duration: Math.random() * 10 + 10 + 's',
       size: Math.random() * 4 + 4 + 'px'
     }));
-    setParticles(particleArray);
   }, []);
 
   return (

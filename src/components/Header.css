@@ -7,6 +7,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  will-change: background-position;
+  transform: translateZ(0); /* Force GPU acceleration */
 }
 
 @keyframes gradientFlow {
@@ -24,6 +26,8 @@
   height: 200%;
   background: radial-gradient(circle, rgba(52, 168, 83, 0.15) 0%, transparent 70%);
   animation: pulse 8s ease-in-out infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .header::after {
@@ -35,11 +39,13 @@
   height: 200%;
   background: radial-gradient(circle, rgba(61, 220, 132, 0.1) 0%, transparent 70%);
   animation: pulse 10s ease-in-out infinite reverse;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
-  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+ 0%, 100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.5; }
+ 50% { transform: translate3d(0, 0, 0) scale(1.2) rotate(180deg); opacity: 0.8; }
 }
 
 /* Animated particles */
@@ -51,6 +57,9 @@
   border-radius: 50%;
   animation: floatParticle 15s infinite;
   box-shadow: 0 0 10px rgba(52, 168, 83, 0.8);
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .header .particle::before {
@@ -61,16 +70,18 @@
   background: rgba(61, 220, 132, 0.6);
   border-radius: 50%;
   animation: particlePulse 2s ease-in-out infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 @keyframes particlePulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.5; }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { transform: translate3d(0, 0, 0) scale(1.5); opacity: 0.5; }
 }
 
 @keyframes floatParticle {
   0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
     opacity: 0;
   }
   10% {
@@ -80,7 +91,7 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) translateX(50px) rotate(360deg);
+    transform: translate3d(50px, -100vh, 0) rotate(360deg);
     opacity: 0;
   }
 }
@@ -90,8 +101,11 @@
   position: absolute;
   border-radius: 50%;
   background: rgba(52, 168, 83, 0.1);
-  backdrop-filter: blur(5px);
+  /* Removed backdrop-filter for better performance */
   z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .shape-1 {
@@ -122,21 +136,21 @@
 }
 
 @keyframes floatShape1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -30px) rotate(120deg); }
-  66% { transform: translate(-20px, 20px) rotate(240deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  33% { transform: translate3d(30px, -30px, 0) rotate(120deg); }
+  66% { transform: translate3d(-20px, 20px, 0) rotate(240deg); }
 }
 
 @keyframes floatShape2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-40px, 40px) rotate(180deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(-40px, 40px, 0) rotate(180deg); }
 }
 
 @keyframes floatShape3 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-  25% { transform: translate(20px, -20px) rotate(90deg) scale(1.2); }
-  50% { transform: translate(-20px, 20px) rotate(180deg) scale(0.8); }
-  75% { transform: translate(20px, 20px) rotate(270deg) scale(1.1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate3d(20px, -20px, 0) rotate(90deg) scale(1.2); }
+  50% { transform: translate3d(-20px, 20px, 0) rotate(180deg) scale(0.8); }
+  75% { transform: translate3d(20px, 20px, 0) rotate(270deg) scale(1.1); }
 }
 
 .android-badge {
@@ -144,7 +158,8 @@
   top: 20px;
   right: 20px;
   background: linear-gradient(135deg, rgba(52, 168, 83, 0.3), rgba(61, 220, 132, 0.2));
-  backdrop-filter: blur(15px);
+  /* Reduced backdrop-filter blur for better performance */
+  backdrop-filter: blur(8px);
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 0.9rem;
@@ -153,7 +168,9 @@
   box-shadow: 0 4px 15px rgba(52, 168, 83, 0.3);
   animation: badgeGlow 2s ease-in-out infinite;
   z-index: 10;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: box-shadow;
+  transform: translateZ(0);
 }
 
 .android-badge:hover {
@@ -173,6 +190,8 @@
   filter: drop-shadow(0 0 20px rgba(52, 168, 83, 0.5));
   display: inline-block;
   transition: transform 0.3s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .android-icon:hover {
@@ -181,8 +200,8 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -15px, 0) rotate(5deg); }
 }
 
 .header-content {
@@ -206,6 +225,8 @@
   text-shadow: 0 0 30px rgba(52, 168, 83, 0.3);
   position: relative;
   display: inline-block;
+  will-change: background-position, filter;
+  transform: translateZ(0);
 }
 
 .name::after {
@@ -225,8 +246,8 @@
 }
 
 @keyframes underlineExpand {
-  0%, 100% { transform: scaleX(0); opacity: 0; }
-  50% { transform: scaleX(1); opacity: 1; }
+  0%, 100% { transform: translateZ(0) scaleX(0); opacity: 0; }
+  50% { transform: translateZ(0) scaleX(1); opacity: 1; }
 }
 
 @keyframes textShine {
@@ -244,11 +265,13 @@
   letter-spacing: 1px;
   animation: titlePulse 3s ease-in-out infinite;
   display: inline-block;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes titlePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% { transform: translateZ(0) scale(1); }
+  50% { transform: translateZ(0) scale(1.05); }
 }
 
 .subtitle {
@@ -265,11 +288,11 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 20px, 0);
   }
   to {
     opacity: 0.9;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -290,8 +313,10 @@
   background: rgba(52, 168, 83, 0.1);
   border-radius: 20px;
   border: 1px solid rgba(52, 168, 83, 0.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   animation: contactSlideIn 0.6s ease-out backwards;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .contact-item:nth-child(1) { animation-delay: 0.1s; }
@@ -300,7 +325,7 @@
 
 .contact-item:hover {
   background: rgba(52, 168, 83, 0.2);
-  transform: translateY(-3px);
+  transform: translate3d(0, -3px, 0);
   box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
   border-color: #3ddc84;
 }
@@ -308,11 +333,11 @@
 @keyframes contactSlideIn {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translate3d(-20px, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -344,12 +369,15 @@
   border: 2px solid rgba(52, 168, 83, 0.5);
   border-radius: 30px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   background: rgba(52, 168, 83, 0.1);
-  backdrop-filter: blur(10px);
+  /* Reduced backdrop-filter blur for better performance */
+  backdrop-filter: blur(5px);
   position: relative;
   overflow: hidden;
   animation: socialPulse 3s ease-in-out infinite;
+  will-change: box-shadow, transform;
+  transform: translateZ(0);
 }
 
 @keyframes socialPulse {
@@ -375,7 +403,7 @@
 .social-link:hover {
   background: linear-gradient(135deg, #34a853, #3ddc84);
   color: white;
-  transform: translateY(-3px) scale(1.05);
+  transform: translate3d(0, -3px, 0) scale(1.05);
   box-shadow: 0 8px 25px rgba(52, 168, 83, 0.4);
   border-color: #3ddc84;
 }
